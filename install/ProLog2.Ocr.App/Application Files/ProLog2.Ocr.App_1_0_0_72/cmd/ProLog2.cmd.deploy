@@ -1,0 +1,42 @@
+@echo off
+:ImageCompany
+@"C:\Program Files (x86)\Rowa\Bin\RowaSleep.Exe" 1
+:Eckelmann
+@if exist "C:\Program Files\EAG\emil\assemblies\E.MIL.exe" (
+  @echo file exist "C:\Program Files\EAG\emil\assemblies\E.MIL.exe"
+  @cd "C:\Program Files\EAG\emil\assemblies"
+  @start /min  E.MIL.exe
+)
+@if exist "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx\bin\OCR.ImageStorage.Tx.exe" (
+  @echo file exist "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx\bin\OCR.ImageStorage.Tx.exe"
+  @cd "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx\bin"
+  @start /min  OCR.ImageStorage.Tx.exe
+)
+else (
+  @if exist "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx\OCR.ImageStorage.Tx.exe" (
+    @echo file exist "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx\OCR.ImageStorage.Tx.exe"
+    @cd "C:\Program Files\EAG\emil_ocr\OCR.ImageStorage.Tx"
+    @start /min  OCR.ImageStorage.Tx.exe
+  )
+)
+@if exist "C:\Program Files\EAG\emil_ocr\OCR.Service.Local\bin\OCR.Service.Local.exe" (
+  @echo file exist "C:\Program Files\EAG\emil_ocr\OCR.Service.Local\bin\OCR.Service.Local.exe"
+  @cd "C:\Program Files\EAG\emil_ocr\OCR.Service.Local\bin"
+  @start /min  OCR.Service.Local.exe
+)
+else (
+  @if exist "C:\Program Files\EAG\emil_ocr\OCR.System\OCR.Service.exe" (
+    @echo file exist "C:\Program Files\EAG\emil_ocr\OCR.System\OCR.Service.exe"
+    @cd "C:\Program Files\EAG\emil_ocr\OCR.System"
+    @start /min  OCR.Service.exe
+  )
+)
+:ProLog2Server
+@"C:\Program Files (x86)\Rowa\Bin\RowaSleep.Exe" 1
+@if exist "C:\Program Files (x86)\Rowa\Bin\ProLog2\ProLog2.Server.Exe" (
+  @echo file exist "C:\Program Files (x86)\Rowa\Bin\ProLog2\ProLog2.Server.Exe"
+  @cd "C:\Program Files (x86)\Rowa\Bin\ProLog2"
+  @start  ProLog2.Server.Exe
+)
+@pause
+@exit
